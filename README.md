@@ -14,8 +14,13 @@ Será desenvolvido um sistema para a padaria Pão de Mel, que auxiliará na gest
 
 <!-- Descrever e limitar o escopo da aplicação. -->
 ### 2. Escopo
-As funcionalidades do nosso sistema irá poder cadastrar, editar e excluir produtos, estoque e vendas. Além de ter o login para o administrador acessar o sistema, e gerar relatórios.
+O nosso sistema conta com as seguintes funcionalidades:
 
+* Cadastrar, editar e excluir os produtos;
+* Visualizar estoque disponível; 
+* Registrar as vendas;
+* Gerar relatórios;
+* Além de ter o login para o administrador acessar o sistema.
 <!-- Apresentar restrições de funcionalidades e de escopo. -->
 ### 3. Restrições
 

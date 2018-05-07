@@ -1,31 +1,26 @@
-## Synopsis
+# **CSI477-2018-01 - Proposta de Trabalho Final**
+## *Grupo: Padaria Pão de Mel*
 
-At the top of the file there should be a short introduction and/ or overview that explains **what** the project is. This description should match descriptions added for package managers (Gemspec, package.json, etc.)
+--------------
 
-## Code Example
+<!-- Descrever um resumo sobre o trabalho. -->
 
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+### Resumo
+O documento tem como objetivo apresentar a proposta para o trabalho a ser desenvolvido na disciplina CSI477 - Sistemas WEB I. Nesse documento será apresentado o tema, escopo, restrições, prótotipo e referências.
 
-## Motivation
+<!-- Apresentar o tema. -->
+### 1. Tema
 
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
 
-## Installation
+<!-- Descrever e limitar o escopo da aplicação. -->
+### 2. Escopo
 
-Provide code examples and explanations of how to get the project.
 
-## API Reference
+<!-- Apresentar restrições de funcionalidades e de escopo. -->
+### 3. Restrições
 
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
 
-## Tests
+<!-- Construir alguns protótipos para a aplicação, disponibilizá-los no Github e descrever o que foi considerado. //-->
+### 4. Protótipo
 
-Describe and show how to run the tests with code examples.
-
-## Contributors
-
-Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
-
-## License
-
-A short snippet describing the license (MIT, Apache, etc.)
+### 5. Referências

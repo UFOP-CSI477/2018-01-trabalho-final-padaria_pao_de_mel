@@ -10,8 +10,7 @@ O documento tem como objetivo apresentar a proposta para o trabalho a ser desenv
 
 <!-- Apresentar o tema. -->
 ### 1. Tema
-	
-	Será desenvolvido um sistema para a padaria Pão de Mel, que auxiliará na gestão dos produtos existentes, do gerenciamento do estoque e das vendas realizadas, além disso o usuário poderá gerar relatórios que auxiliem na visualização dos resultados e na melhorar tomada de decisão dentro do negócio. 
+Será desenvolvido um sistema para a padaria Pão de Mel, que auxiliará na gestão dos produtos existentes, do gerenciamento do estoque e das vendas realizadas, além disso o usuário poderá gerar relatórios que auxiliem na visualização dos resultados e na melhorar tomada de decisão dentro do negócio. 
 
 <!-- Descrever e limitar o escopo da aplicação. -->
 ### 2. Escopo

@@ -14,7 +14,7 @@ O documento tem como objetivo apresentar a proposta para o trabalho a ser desenv
 
 <!-- Descrever e limitar o escopo da aplicação. -->
 ### 2. Escopo
-
+As funcionalidades do nosso sistema irá poder cadastrar, editar e excluir produtos, estoque e vendas. Além de ter o login para o administrador acessar o sistema, e gerar relatórios.
 
 <!-- Apresentar restrições de funcionalidades e de escopo. -->
 ### 3. Restrições

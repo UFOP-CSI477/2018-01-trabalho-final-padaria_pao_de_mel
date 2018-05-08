@@ -27,10 +27,10 @@ O nosso sistema conta com as seguintes funcionalidades:
 
 <!-- Construir alguns protótipos para a aplicação, disponibilizá-los no Github e descrever o que foi considerado. //-->
 ### 4. Protótipo
-![Login](https://ibb.co/kVsuzS)
-![Home](https://ibb.co/ef8ZzS)
-![Produtos](https://ibb.co/gkDCm7)
-![Cadastro de Produtos](https://ibb.co/nx81eS)
+![Login](https://github.com/UFOP-CSI477/2018-01-trabalho-final-padaria_pao_de_mel/blob/master/prototipo/prototipopadariapaodemelPrancheta-1.png)
+![Home](https://github.com/UFOP-CSI477/2018-01-trabalho-final-padaria_pao_de_mel/blob/master/prototipo/prototipopadariapaodemelPrancheta-2.png)
+![Produtos](https://github.com/UFOP-CSI477/2018-01-trabalho-final-padaria_pao_de_mel/blob/master/prototipo/prototipopadariapaodemelPrancheta-3.png)
+![Cadastro de Produtos](https://github.com/UFOP-CSI477/2018-01-trabalho-final-padaria_pao_de_mel/blob/master/prototipo/prototipopadariapaodemelPrancheta-4.png)
 
 
 

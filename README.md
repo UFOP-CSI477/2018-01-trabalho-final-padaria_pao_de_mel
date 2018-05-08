@@ -27,10 +27,25 @@ O nosso sistema conta com as seguintes funcionalidades:
 
 <!-- Construir alguns protótipos para a aplicação, disponibilizá-los no Github e descrever o que foi considerado. //-->
 ### 4. Protótipo
+Abaixo temos a prototipação das principais telas do sistema da padaria Pão de Mel.
+
+* Tela de login
+
 ![Login](https://github.com/UFOP-CSI477/2018-01-trabalho-final-padaria_pao_de_mel/blob/master/prototipo/prototipopadariapaodemelPrancheta-1.png)
+
+* Home
+
 ![Home](https://github.com/UFOP-CSI477/2018-01-trabalho-final-padaria_pao_de_mel/blob/master/prototipo/prototipopadariapaodemelPrancheta-2.png)
+
+* Produtos
+
 ![Produtos](https://github.com/UFOP-CSI477/2018-01-trabalho-final-padaria_pao_de_mel/blob/master/prototipo/prototipopadariapaodemelPrancheta-3.png)
+
+* Cadastro de Produtos
+
 ![Cadastro de Produtos](https://github.com/UFOP-CSI477/2018-01-trabalho-final-padaria_pao_de_mel/blob/master/prototipo/prototipopadariapaodemelPrancheta-4.png)
+
+As outras telas seguem o mesmo estilo.
 
 
 

@@ -27,6 +27,12 @@ O nosso sistema conta com as seguintes funcionalidades:
 
 <!-- Construir alguns protótipos para a aplicação, disponibilizá-los no Github e descrever o que foi considerado. //-->
 ### 4. Protótipo
+![Login](https://ibb.co/kVsuzS)
+![Home](https://ibb.co/ef8ZzS)
+![Produtos](https://ibb.co/gkDCm7)
+![Cadastro de Produtos](https://ibb.co/nx81eS)
+
+
 
 ### 5. Referências
 Sem referências a princípio

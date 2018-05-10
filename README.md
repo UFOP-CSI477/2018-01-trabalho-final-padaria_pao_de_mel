@@ -23,6 +23,13 @@ O nosso sistema conta com as seguintes funcionalidades:
 * Além de ter o login para o administrador acessar o sistema.
 <!-- Apresentar restrições de funcionalidades e de escopo. -->
 ### 3. Restrições
+O sistema da padaria Pão de Mel terá as seguintes restrições:
+
+* Não utilizará formas de pagamento;
+* Não vai possuir conexão com fornecedores;
+* Não irá emitir nota fiscal;
+* Não levaremos em consideração cada venda realizada separadamente.
+
 
 
 <!-- Construir alguns protótipos para a aplicação, disponibilizá-los no Github e descrever o que foi considerado. //-->

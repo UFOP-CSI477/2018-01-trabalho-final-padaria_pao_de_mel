@@ -90,8 +90,8 @@ class PvendasController extends Controller
 
         $pvendas->quantidade = $request->quantidade;
         $pvendas->data = $request->data;
-        $gdiario->produtos_id = $request->produtos_id;        
-        $gdiario->save();
+        $pvendas->produtos_id = $request->produtos_id;        
+        $pvendas->save();
 
         return redirect()->action('PvendasController@index');
     }

@@ -45,7 +45,7 @@ class PprodutosController extends Controller
 
         $pprodutos = Pprodutos::Create($inputs);
         
-        return redirect()->action('PvendasController@index');
+        return redirect()->action('PprodutosController@index');
 
     }
 
@@ -71,9 +71,9 @@ class PprodutosController extends Controller
      */
     public function edit($id)
     {
-        $pvendas = Pvendas::find($id);
+        $pprodutos = Pprodutos::find($id);
 
-        return view('pvendas.edit', compact('pvendas', $pvendas));
+        return view('pprodutos.edit', compact('pprodutos', $pprodutos));
 
     }
 
@@ -86,14 +86,15 @@ class PprodutosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pvendas = Pvendas::find($id);
+        $pprodutos = Pprodutos::find($id);
 
-        $pvendas->quantidade = $request->quantidade;
-        $pvendas->data = $request->data;
-        $gdiario->produtos_id = $request->produtos_id;        
-        $gdiario->save();
+        $pprodutos->nome = $request->nome;
+        $pprodutos->descricao = $request->descricao;
+        $pprodutos->quantidade = $request->quantidade;  
+        $pprodutos->preco = $request->preco;      
+        $pprodutos->save();
 
-        return redirect()->action('PvendasController@index');
+        return redirect()->action('PprodutosController@index');
     }
 
     /**
@@ -106,20 +107,20 @@ class PprodutosController extends Controller
     {
         //Product::destroy($id);
 
-        $pvendas = Pvendas::find($id)
+        $pprodutos = Pprodutos::find($id)
             ->delete();
 
-        return redirect()->action('PvendasController@index');
+        return redirect()->action('PprodutosController@index');
 
     }
 
     public function listar() {
 
         //Acesso ao modelo e recuperação dos dados
-        $pvendas = Pvendas::all();
+        $pprodutos = Pprodutos::all();
 
         //Invocar a view passando os dados
-        return view ('pvendas.listar') -> with ('pvendas', $pvendas);
+        return view ('pprodutos.listar') -> with ('pprodutos', $pprodutos);
 
     }
 }

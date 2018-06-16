@@ -2,7 +2,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-class CreateTableEstados extends Migration
+class CreateTableProdutos extends Migration
 {
     /**
      * Run the migrations.
@@ -11,10 +11,12 @@ class CreateTableEstados extends Migration
      */
     public function up()
     {
-        Schema::create('estados', function(Blueprint $table){
+        Schema::create('vendas', function(Blueprint $table){
 						$table->increments('id');
-						$table->string('nome', 100);
-						$table->string('sigla', 2);
+						$table->string('nome', 45);
+						$table->string('descricao', 200);
+                        $table->int('quantidade', 11);
+                        $table->double('preco');
 						$table->timestamps();
         });
     }
@@ -25,6 +27,6 @@ class CreateTableEstados extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estados');
+        Schema::dropIfExists('produtos');
     }
 }

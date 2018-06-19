@@ -7,7 +7,7 @@
  
     <div id="top" class="row">
         <div class="col-sm-3">
-            <h2>Vendas</h2>
+            <h2>Produtos</h2>
         </div>
         <div class="col-sm-6">
             
@@ -29,7 +29,7 @@
                               </div>
         </div>
         <div class="col-sm-3">
-            <a href="add.html" class="btn btn-primary pull-right h2">Registrar Venda</a>
+            <a href="add.html" class="btn btn-primary pull-right h2">Novo Item</a>
         </div>
     </div> <!-- /#top -->
  
@@ -41,10 +41,10 @@
         <table class="table table-striped" cellspacing="0" cellpadding="0">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Header 1</th>
-                    <th>Header 2</th>
-                    <th>Header 3</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
                     <th class="actions">Ações</th>
                 </tr>
             </thead>
@@ -161,7 +161,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-      	<h4 class="modal-title" id="modalLabel">Excluir venda</h4>
+      	<h4 class="modal-title" id="modalLabel">Excluir Item</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
@@ -176,9 +176,10 @@
 </div>
 
 <script type="application/javascript">
-                var active = document.getElementById("vendas");
+                var active = document.getElementById("produtos");
                 active.classList.add("active");
  </script>
+
 <?php 
 require_once 'footer.php';
 ?>

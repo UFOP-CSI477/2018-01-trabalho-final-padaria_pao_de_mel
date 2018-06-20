@@ -1,7 +1,9 @@
 <?php
+
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+
 class CreateTableVendas extends Migration
 {
     /**
@@ -11,15 +13,15 @@ class CreateTableVendas extends Migration
      */
     public function up()
     {
-        Schema::create('vendas', function(Blueprint $table){
-						$table->increments('id');
-						
-                        $table->int('quantidade');
-                        $table->date('data');
-                        $table->int('produtos_id');
-						$table->timestamps();
+        Schema::create('vendas', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('quantidade');
+            $table->date('data');           
+            $table->timestamps();
+            $table->foreign('produto_id')->references('id')->on('produto');
         });
     }
+
     /**
      * Reverse the migrations.
      *

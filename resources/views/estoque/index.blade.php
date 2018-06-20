@@ -1,64 +1,28 @@
-@extends('layouts.html')
+@extends ('layout.principal')
+@section('conteudo')
+<br>
+<!-- URL a partir do nome da rota -->
 
-@section('body')
-	
-  <div class="container">
+<a href="{{route('estoques.create')}}">Inserir Estoque</a>
+  <table>
+    <tr>
+      <th>Código</th>
+      <th>Quantidade</th>
+      <th>ID do Produto</th>
+      <th>Ação</th>
+    </tr>
 
-    <div class="container">
-      <h1>Estoque da Padaria</h1>
-    </div>
-
-    <div class="table-responsive">
-
-      <table class="table table-hover">
-      
-      <tr>
-          <th>#</th>
-          <th>Quantidade</th>
-          <th>ID Produtos</th>
-          
-      </tr>
-
-
-       @foreach($pestoques as $pestoque)
-
-          {!!Form::open([
-            'method' => 'delete',
-            'route' => ['pestoque.destroy', $pestoque->id]
-            ])
-          !!}
-
-
-          <tr>
-              <td><b>{{$pestoque->id}}</b></td>
-              <td>{{$pestoque->quantidade}}</td>
-              <td>{{$pestoque->produtos_id}}</td>
-              
-              <td>
-
-                <a type="button" class="btn btn-warning" href="{{route('pestoque.edit', $pestoque->id)}}">Editar</a>
-
-                {!!Form::submit('Excluir', [
-                'class' => 'btn btn-danger'
-                  ])
-                !!}
     
-              </td>
-            </tr>
-
-          {!!Form::close()!!}
-
-        @endforeach
-
-      </table>
-
-      <a type="button" class="btn btn-success" href="{{route('pestoque.create')}}">Novo</a>
-     <!--  <a align="center" type="button" class="btn btn-success" href="http://localhost:8000/menugravidez">Voltar</a> -->
-
-    </div>
-
-  </div>
+@foreach($estoques as $e)
+<tr>
+  <td>{{$e->id}}</td>
+  <td>{{$e->quantidade}}</td>
+  <td>{{$e->produtos_id}}</td>
+  <td><a href="/estoques/{{$e->id}}">Exibir</a></td>
+</tr>
 
 
+@endforeach 
+</table>
+@endsection('conteudo')
 
-@stop

@@ -1,46 +1,21 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Laravel</title>
+<head>
+    <meta charset="utf-8">
+    <title>Padaria Pão de Mel</title>
+    <link rel="stylesheet" href="{{ asset('./css/app.css')}}">
+</head>
+<body>
+    <!-- Flash: mensagem -->
+    @if(Session::has('mensagem'))
+    <h2>{{Session::get('mensagem')}}</h2>
+    @endif
+    <!-- Links -->
+<a href="#">Estoque</a>
+<a href="#">Vendas</a>
+<a href="#">Produtos</a>
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-            </div>
-        </div>
-    </body>
+<!-- Conteúdo -->
+@yield('conteudo')
+</body>
 </html>
-s

@@ -11,7 +11,7 @@
     <h2>{{Session::get('mensagem')}}</h2>
     @endif
     <!-- Links -->
-<a href="#">Estoque</a>
+<a href="/estoques">Estoque</a>
 <a href="#">Vendas</a>
 <a href="#">Produtos</a>
 

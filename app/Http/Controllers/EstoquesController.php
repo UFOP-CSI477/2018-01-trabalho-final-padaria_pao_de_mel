@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Estado;
+use App\Estoque;
 use Illuminate\Http\Request;
 
-class EstadosController extends Controller
+class EstoquesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class EstadosController extends Controller
      */
     public function index()
     {
-        $estados= Estado::all();
-        return view('estoques.index')->with('estoques',$estados);
+        $estoques= Estoque::all();
+        return view('estoques.index')->with('estoques',$estoques);
     }
 
     /**
@@ -66,7 +66,7 @@ class EstadosController extends Controller
      */
     public function edit(Estoque $estoque)
     {
-        //
+        return view('estoques.edit')->with('estoque',$estoque);
     }
 
     /**
@@ -78,7 +78,11 @@ class EstadosController extends Controller
      */
     public function update(Request $request, Estoque $estoque)
     {
-        //
+        $estoque->fill($request->all());
+        $estoque->save();
+        session()->flash('mensagem', 'Estoque atualizado com sucesso!');
+        return redirect()->route('estoques.show',$estoque->id);
+        
     }
 
     /**

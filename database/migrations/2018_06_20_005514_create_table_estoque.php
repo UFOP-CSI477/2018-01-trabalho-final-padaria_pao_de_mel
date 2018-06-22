@@ -13,7 +13,7 @@ class CreateTableEstoque extends Migration
      */
     public function up()
     {
-        Schema::create('estoque', function (Blueprint $table) {
+        Schema::create('estoques', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('quantidade')->unsigned();
 
@@ -29,6 +29,6 @@ class CreateTableEstoque extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estoque');
+        Schema::dropIfExists('estoques');
     }
 }

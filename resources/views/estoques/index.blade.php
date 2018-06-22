@@ -17,7 +17,7 @@
 <tr>
   <td>{{$e->id}}</td>
   <td>{{$e->quantidade}}</td>
-  <td>{{$e->produtos_id}}</td>
+  <td>{{$e->produto_id}}</td>
   <td><a href="/estoques/{{$e->id}}">Exibir</a></td>
 </tr>
 

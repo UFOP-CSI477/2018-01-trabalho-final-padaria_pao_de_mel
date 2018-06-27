@@ -12,8 +12,8 @@
     @endif
     <!-- Links -->
 <a href="/estoques">Estoque</a>
-<a href="#">Vendas</a>
-<a href="#">Produtos</a>
+<a href="/vendas">Vendas</a>
+<a href="/produtos">Produtos</a>
 
 <!-- Conteúdo -->
 @yield('conteudo')

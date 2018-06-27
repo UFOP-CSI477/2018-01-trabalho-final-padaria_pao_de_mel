@@ -9,7 +9,8 @@
       <th>Código</th>
       <th>Quantidade</th>
       <th>ID do Produto</th>
-      <th>Ação</th>
+      <th>Exibir</th>
+      <th>Editar</th>
     </tr>
 
     
@@ -19,6 +20,7 @@
   <td>{{$e->quantidade}}</td>
   <td>{{$e->produto_id}}</td>
   <td><a href="/estoques/{{$e->id}}">Exibir</a></td>
+   <td><a href="/estoques/{{$e->id}}">Editar</a></td>
 </tr>
 
 

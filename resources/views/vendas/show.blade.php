@@ -1,30 +1,16 @@
-@extends('layouts.html')
+@extends('layout.principal')
+@section('conteudo')
+<h1> Dados de Vendas</h1>
+<p>Codigo:{{$venda->id}}</p>
+<p>Quantidade:{{$venda->quantidade}}</p>
+<p>Data:{{$venda->data}}</p>
+<p>Id do Produto:{{$venda->produto_id}}</p>
+<a href="/vendas">Voltar</a>
+<a href="{{route('vendas.edit',$vendas->id)}}">Editar</a>
+<form method="post" action="{{route('vendas.destroy',$venda->id)}}"
+  @csrf
+  @method('DELETE')
+  <input type="submit" value="Excluir">
+</form>
 
-@section('body')
-
-  <div class="container">
-    
-    {!!Form::open([
-        'method' => 'delete',
-        'route' => ['pvenda.destroy', $pvenda ->id]
-      ])
-    !!}
-      
-      <h1>{{$pvenda->id}}</h1>      
-      <h1>{{$pvenda->quantidade}}</h1>
-      <h1>{{$pvenda->data}}</h1>
-        <h1>{{$pvenda->produtos_id}}</h1>
-
-      
-      <a type="button" class="btn btn-warning" href="{{route('pvenda.edit', $pvenda->id)}}">Editar</a>
-
-      {!!Form::submit('Excluir', [
-          'class' => 'btn btn-danger'
-        ])
-      !!}
-
-    {!!Form::close()!!}
-
-  </div>
-  
-@stop
+@endsection('conteudo')

@@ -17,3 +17,5 @@ return view('layout/principal');
     return view('welcome');
 });*/
 Route::resource('/estoques','EstoquesController');
+Route::resource('/vendas','VendasController');
+Route::resource('/produtos','ProdutosController');

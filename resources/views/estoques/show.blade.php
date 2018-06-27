@@ -5,7 +5,7 @@
 <p>Quantidade:{{$estoque->quantidade}}</p>
 <p>Id do Produto:{{$estoque->produto_id}}</p>
 <a href="/estoques">Voltar</a>
-<a href="{{route('estoques.edit',$estoques->id)}}">Editar</a>
+<a href="{{route('estoques.edit',$estoque->id)}}">Editar</a>
 <form method="post" action="{{route('estoques.destroy',$estoque->id)}}"
 	@csrf
 	@method('DELETE')

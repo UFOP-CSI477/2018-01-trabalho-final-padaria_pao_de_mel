@@ -4,9 +4,9 @@
 <p>Codigo:{{$venda->id}}</p>
 <p>Quantidade:{{$venda->quantidade}}</p>
 <p>Data:{{$venda->data}}</p>
-<p>Id do Produto:{{$venda->produto_id}}</p>
+<p>Id do Produto:{{$venda->produtos_id}}</p>
 <a href="/vendas">Voltar</a>
-<a href="{{route('vendas.edit',$vendas->id)}}">Editar</a>
+<a href="{{route('vendas.edit',$venda->id)}}">Editar</a>
 <form method="post" action="{{route('vendas.destroy',$venda->id)}}"
   @csrf
   @method('DELETE')

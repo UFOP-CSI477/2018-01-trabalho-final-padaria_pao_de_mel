@@ -18,7 +18,7 @@ class CreateTableVendas extends Migration
             $table->integer('quantidade');
             $table->date('data');           
             $table->timestamps();
-            $table->foreign('produto_id')->references('id')->on('produto');
+            $table->foreign('produtos_id')->references('id')->on('produto');
         });
     }
 

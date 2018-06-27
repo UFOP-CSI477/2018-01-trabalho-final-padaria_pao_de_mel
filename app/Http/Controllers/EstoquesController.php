@@ -93,6 +93,8 @@ class EstoquesController extends Controller
      */
     public function destroy(Estoque $estoque)
     {
-        //
+         $estoque->delete();
+        session()->flash('mensagem','Estoque excluido com sucesso');
+        return redirect()->route('estoques.index');
     }
 }

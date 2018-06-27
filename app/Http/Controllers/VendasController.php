@@ -93,6 +93,8 @@ class VendasController extends Controller
      */
     public function destroy(Venda $venda)
     {
-        //
+         $venda->delete();
+        session()->flash('mensagem','Venda excluida com sucesso');
+        return redirect()->route('vendas.index');
     }
 }

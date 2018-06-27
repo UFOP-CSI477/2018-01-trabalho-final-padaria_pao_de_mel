@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Estoque;
+use App\Produto;
 use Illuminate\Http\Request;
 
-class VendasController extends Controller
+class ProdutosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class VendasController extends Controller
      */
     public function index()
     {
-        $vendas= Venda::all();
-        return view('vendas.index')->with('vendas',$vendas);
+        $produtos= Produto::all();
+        return view('produtos.index')->with('produtos',$produtos);
     }
 
     /**
@@ -25,7 +25,7 @@ class VendasController extends Controller
      */
     public function create()
     {
-        return view ('vendas.create');
+        return view ('produtos.create');
     }
 
     /**
@@ -38,13 +38,13 @@ class VendasController extends Controller
     {
         //dd($request->all());
         //Validação
-        Venda::create($request->all());
+        Produto::create($request->all());
         /*$estado= new Estado;
         $estado->nome=$request->nome;
         $estado->sigla=$request->sigla;
         $estado->save();*/
-        session()->flash('mensagem','Venda inserida com sucesso!');
-        return redirect('/vendas');
+        session()->flash('mensagem','Produto inserido com sucesso!');
+        return redirect('/produtos');
     }
 
     /**
@@ -53,9 +53,9 @@ class VendasController extends Controller
      * @param  \App\Estadp  $estadp
      * @return \Illuminate\Http\Response
      */
-    public function show(Venda $venda)
+    public function show(Produto $produto)
     {
-        return view('vendas.show')->with('venda',$venda);
+        return view('produtos.show')->with('produto',$produto);
     }
 
     /**
@@ -64,9 +64,9 @@ class VendasController extends Controller
      * @param  \App\Estadp  $estadp
      * @return \Illuminate\Http\Response
      */
-    public function edit(Venda $venda)
+    public function edit(Produto $produto)
     {
-        return view('vendas.edit')->with('venda',$venda);
+        return view('produtos.edit')->with('produto',$produto);
     }
 
     /**
@@ -76,12 +76,12 @@ class VendasController extends Controller
      * @param  \App\Estadp  $estadp
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Venda $venda)
+    public function update(Request $request, Produto $produto)
     {
-        $venda->fill($request->all());
-        $venda->save();
-        session()->flash('mensagem', 'Venda atualizada com sucesso!');
-        return redirect()->route('vendas.show',$venda->id);
+        $produto->fill($request->all());
+        $produto->save();
+        session()->flash('mensagem', 'Produto atualizado com sucesso!');
+        return redirect()->route('produtos.show',$produto->id);
         
     }
 
@@ -93,6 +93,8 @@ class VendasController extends Controller
      */
     public function destroy(Venda $venda)
     {
-        //
+         $produto->delete();
+        session()->flash('mensagem','Produto excluido com sucesso');
+        return redirect()->route('produtos.index');
     }
 }

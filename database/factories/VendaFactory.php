@@ -2,7 +2,7 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\Vendas::class, function (Faker $faker) {
+$factory->define(App\Venda::class, function (Faker $faker) {
     return [
         //
     ];

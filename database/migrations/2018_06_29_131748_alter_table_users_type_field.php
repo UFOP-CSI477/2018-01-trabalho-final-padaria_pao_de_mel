@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableEstoque extends Migration
+class AlterTableUsersTypeField extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateTableEstoque extends Migration
      */
     public function up()
     {
-        Schema::create('estoques', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('quantidade')->unsigned();
-
-            $table->timestamps();
-            $table->foreign('produtos_id')->references('id')->on('produto');
+        Schema::table('users', function (Blueprint $table) {
+            $table->integer('type')->default('1');
         });
     }
 
@@ -29,6 +25,8 @@ class CreateTableEstoque extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estoques');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 }

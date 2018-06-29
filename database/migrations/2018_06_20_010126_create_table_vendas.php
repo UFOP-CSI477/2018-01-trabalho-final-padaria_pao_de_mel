@@ -15,10 +15,10 @@ class CreateTableVendas extends Migration
     {
         Schema::create('vendas', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('quantidade');
+            $table->integer('quantidade')->unsigned();
             $table->date('data');           
             $table->timestamps();
-            $table->foreign('produtos_id')->references('id')->on('produto');
+            $table->foreign('produtos_id')->references('id')->on('produtos');
         });
     }
 

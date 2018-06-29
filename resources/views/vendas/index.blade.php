@@ -21,7 +21,7 @@
 
   <td>{{$v->quantidade}}</td>
    <td>{{$v->data}}</td>
-  <td>{{$v->produto_id}}</td>
+  <td>{{$v->produtos_id}}</td>
   <td><a href="/vendas/{{$v->id}}">Exibir</a></td>
   <td><a href="/vendas/{{$v->id}}">Editar</a></td>
 </tr>

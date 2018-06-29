@@ -91,7 +91,7 @@ class ProdutosController extends Controller
      * @param  \App\Estadp  $estadp
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Venda $venda)
+    public function destroy(Produto $produto)
     {
          $produto->delete();
         session()->flash('mensagem','Produto excluido com sucesso');

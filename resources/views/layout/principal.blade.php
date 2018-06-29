@@ -10,6 +10,18 @@
     @if(Session::has('mensagem'))
     <h2>{{Session::get('mensagem')}}</h2>
     @endif
+    <!-- Usuário autenticado -->
+	@if(Auth::check())
+	<nav class="navbar navbar-light bg-secondary">
+		<span class="text-white"> Usuario:{{Auth::user()->nome}}
+			@if(Auth::user()->type==2)
+				Administrador do Sistema
+			@else
+				Usuário
+			@endif
+		</span>
+	</nav>
+	@endif
     <!-- Links -->
 <a href="/estoques">Estoque</a>
 <a href="/vendas">Vendas</a>

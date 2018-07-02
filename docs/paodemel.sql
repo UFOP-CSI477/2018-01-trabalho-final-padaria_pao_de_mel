@@ -27,7 +27,7 @@ USE `paodemel` ;
 -- Table `paodemel`.`produtos`
 -- -----------------------------------------------------
 CREATE TABLE  `paodemel`.`produtos` (
-  `id` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL,
   `descricao` VARCHAR(200) NOT NULL,
   `quantidade` INT(11) NOT NULL,
@@ -41,7 +41,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `paodemel`.`estoque`
 -- -----------------------------------------------------
 CREATE TABLE  `paodemel`.`estoque` (
-  `id` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `quantidade` INT(11) NOT NULL,
   `produtos_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`),
@@ -71,7 +71,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `paodemel`.`vendas`
 -- -----------------------------------------------------
 CREATE TABLE  `paodemel`.`vendas` (
-  `id` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `quantidade` INT(11) NOT NULL,
   `data` DATE NOT NULL,
   `produtos_id` INT(11) NOT NULL,

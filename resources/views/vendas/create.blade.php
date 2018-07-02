@@ -3,6 +3,7 @@
 <h1>Inserir vendas</h1>
 <form method="post" action="{{route('vendas.store')}}">
   @csrf
+  
   <p>Quantidade:<input type="number" name="quantidade"></p>
   <p>Data:<input type="date" name="data"></p>
   <p>Id de produtos:<input type="number" name="produtos_id"></p>

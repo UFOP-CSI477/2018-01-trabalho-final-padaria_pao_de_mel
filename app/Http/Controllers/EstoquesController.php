@@ -97,4 +97,13 @@ class EstoquesController extends Controller
         session()->flash('mensagem','Estoque excluido com sucesso');
         return redirect()->route('estoques.index');
     }
+    public function listar() {
+
+        
+        $estoque = Estoque::all();
+
+        
+        return view ('estoques.listar') -> with ('estoque', $estoque);
+
+    }
 }

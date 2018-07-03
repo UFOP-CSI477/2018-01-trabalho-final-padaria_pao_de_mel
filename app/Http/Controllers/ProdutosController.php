@@ -97,4 +97,13 @@ class ProdutosController extends Controller
         session()->flash('mensagem','Produto excluido com sucesso');
         return redirect()->route('produtos.index');
     }
+    public function listar() {
+
+        
+        $produto = Produto::all();
+
+        
+        return view ('produtos.listar') -> with ('produto', $produto);
+
+    }
 }

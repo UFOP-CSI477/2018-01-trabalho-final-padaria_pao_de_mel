@@ -97,4 +97,13 @@ class VendasController extends Controller
         session()->flash('mensagem','Venda excluida com sucesso');
         return redirect()->route('vendas.index');
     }
+    public function listar() {
+
+        
+        $venda = Venda::all();
+
+        
+        return view ('vendas.listar') -> with ('venda', $venda);
+
+    }
 }

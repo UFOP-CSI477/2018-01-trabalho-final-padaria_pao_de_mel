@@ -23,7 +23,7 @@
 	</nav>
 	@endif
     <!-- Links -->
-<a href="/estoques">Estoque</a>
+<a href="/estoques">Estoques</a>
 <a href="/vendas">Vendas</a>
 <a href="/produtos">Produtos</a>
 

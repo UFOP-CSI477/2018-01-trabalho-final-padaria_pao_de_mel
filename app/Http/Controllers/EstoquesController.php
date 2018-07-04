@@ -14,8 +14,8 @@ class EstoquesController extends Controller
      */
     public function index()
     {
-        $estoques= Estoque::all();
-        return view('estoques.index')->with('estoques',$estoques);
+        $estoque= Estoque::all();
+        return view('estoques.index')->with('estoque',$estoque);
     }
 
     /**

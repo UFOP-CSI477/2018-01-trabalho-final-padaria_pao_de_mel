@@ -14,7 +14,7 @@
     </tr>
 
     
-@foreach($estoques as $e)
+@foreach($estoque as $e)
 <tr>
   <td>{{$e->id}}</td>
   <td>{{$e->quantidade}}</td>

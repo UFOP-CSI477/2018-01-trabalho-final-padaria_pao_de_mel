@@ -67,6 +67,8 @@ class classProduto{
 		public function edit(){
 		try{
 			$stmt = $this->conn->prepare("UPDATE `produtos` SET `nome` = :nome, `descricao` = :descricao, `quantidade` = :quantidade, `preco` = :preco WHERE `id` = :id");
+						$stmt->bindParam(":id", $this->id);
+
 			$stmt->bindParam(":nome", $this->nome);
 			$stmt->bindParam(":descricao", $this->descricao);
 			$stmt->bindParam(":quantidade", $this->quantidade);
@@ -79,11 +81,26 @@ class classProduto{
 		}
 	}
 
+		public function view(){
+		$stmt = $this->conn->prepare("SELECT * FROM `produtos` WHERE `id` = :id");
+		$stmt->bindParam(":id", $this->id);
+		$stmt->execute();
+		$row = $stmt->fetch(PDO::FETCH_OBJ);
+		return $row;
+	}
+
 		public function index(){
 		$stmt = $this->conn->prepare("SELECT * FROM `produtos` WHERE 1 ORDER BY `nome`");
 		$stmt->execute();
 		return $stmt;
 	}
+
+		public function Pesquisa($nome){
+        $stmt = $this->conn->prepare("SELECT * FROM `professors` WHERE `nome` LIKE :nome;");
+        $stmt->bindValue(':nome', '%' . $nome . '%');
+        $stmt->execute();
+        return $stmt;
+    }
 
 }
 ?>

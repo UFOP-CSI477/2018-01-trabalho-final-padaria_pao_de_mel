@@ -2,8 +2,11 @@
 include_once 'menu.php';
 ?>
 
-
-            <div class="col-xl-3 col-lg-6">
+        <div class="col-md-12" align="center" style="padding-top: 200px;">
+            <h1>Bem vindo ao Sistema da </h1>
+            <h1>Padaria Pão de Mel</h1>
+        </div>
+           <!--  <div class="col-xl-3 col-lg-6">
                 <div class="card">
                     <div class="card-body">
                         <div class="stat-widget-one">
@@ -58,7 +61,7 @@ include_once 'menu.php';
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 <script type="application/javascript">
                 var active = document.getElementById("dashboard");
                 active.classList.add("active");

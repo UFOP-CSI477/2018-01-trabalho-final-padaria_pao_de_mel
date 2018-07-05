@@ -60,9 +60,9 @@
                     <li id="vendas">
                         <a href="vendas.php" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon ti-panel"></i>Vendas</a>
                     </li>
-                    <li id="relatorios">
+       <!--              <li id="relatorios">
                         <a href="relatorios.php" class="dropdown-toggle"  aria-haspopup="true" aria-expanded="false"> <i class="menu-icon ti-stats-up"></i>Relatórios</a>
-                    </li>
+                    </li> -->
            
                 </ul>
             </div><!-- /.navbar-collapse -->

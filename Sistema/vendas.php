@@ -5,6 +5,20 @@ include_once 'assets/php/classes/classVendas.php';
         $classVendas= new classVendas();
 
 
+
+
+    if(isset($_POST['delete'])){
+
+         $classVendas->setId($_POST['id1']);
+
+        if($classVendas->delete() == 1){
+            $result = "Venda excluida com sucesso!";
+        }else{
+            $error = "Erro ao excluir";
+        }
+
+    }
+
  ?>
 
 

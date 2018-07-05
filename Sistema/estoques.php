@@ -1,8 +1,8 @@
  <?php
  include_once 'menu.php';
-include_once 'assets/php/classes/classVendas.php';
+include_once 'assets/php/classes/classEstoques.php';
     
-        $classVendas= new classVendas();
+        $classEstoques= new classEstoques();
 
 
  ?>
@@ -12,7 +12,7 @@ include_once 'assets/php/classes/classVendas.php';
  
     <div id="top" class="row">
         <div class="col-sm-3">
-            <h2>Vendas</h2>
+            <h2>Estoques</h2>
         </div>
         <div class="col-sm-6">
             
@@ -46,8 +46,7 @@ include_once 'assets/php/classes/classVendas.php';
         <table class="table table-striped" cellspacing="0" cellpadding="0">
             <thead>
                 <tr>
-                    <th>Quantidade</th>
-                    <th>Data</th>
+                    <th>Quantidade</th>                    
                     <th>ID de Produtos</th>
                     
                     <th class="actions">Ações</th>
@@ -55,12 +54,12 @@ include_once 'assets/php/classes/classVendas.php';
             </thead>
             <tbody>
                 <?php 
-                $stmt = $classVendas->index();
+                $stmt = $classEstoques->index();
                  while($row = $stmt->fetch(PDO::FETCH_OBJ)){
                   ?>
                 <tr>
                     <td><?php echo $row->quantidade ?></td>
-                    <td><?php echo $row->data ?></td>
+                    
                     <td><?php echo $row->produtos_id ?></td>
                     
                     <td class="actions">

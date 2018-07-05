@@ -2,22 +2,22 @@
 <?php
 	include_once 'menu.php';
     include_once 'assets/php/classes/classEstoques.php';
-      include_once 'assets/php/classes/classProdutos.php';
+      include_once 'assets/php/classes/classProduto.php';
 
      $classEstoques = new classEstoques();
-     $classProdutos= new classProdutos();
+     $classProduto= new classProduto();
 
 
 
         if(isset($_POST['insert'])){
             
-        $classVendas->setQuantidade($_POST['quantidade']);        
-         $classVendas->setClassProdutos($_POST['id']);
+        $classEstoques->setQuantidade($_POST['quantidade']);        
+         $classEstoques->setProdutos_id($_POST['produtos_id']);
          
 
 
 
-    if($classVendas->insert()==1){
+    if($classEstoques->insert()==1){
          echo "<script>location.href='estoques.php';</script>"; 
     }else{
 
@@ -33,7 +33,7 @@
  
     <div id="top" class="row">
         <div class="col-sm-12">
-            <h2>Adicionar Venda</h2>
+            <h2>Adicionar Estoque</h2>
         </div>
        
     </div> <!-- /#top -->

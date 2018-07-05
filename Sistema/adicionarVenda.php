@@ -1,9 +1,9 @@
 <?php
 	include_once 'menu.php';
     include_once 'assets/php/classes/classVendas.php';
-     include_once 'assets/php/classes/classProdutos.php';
+     include_once 'assets/php/classes/classProduto.php';
      $classVendas = new classVendas();
-     $classProdutos= new classProdutos();
+     $classProduto= new classProduto();
 
 
 
@@ -12,7 +12,7 @@
             
         $classVendas->setQuantidade($_POST['quantidade']);
          $classVendas->setData($_POST['data']);
-         $classVendas->setClassProdutos($_POST['id']);
+         $classVendas->setProdutos_id($_POST['produtos_id']);
          
 
 
@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="row form-group">
                                         <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Data</label></div>
-                                        <div class="col-12 col-md-9"><textarea name="data" id="textarea-input" rows="9" placeholder="" class="form-control"></textarea></div>
+                                        <div class="col-12 col-md-9"><input type="date" id="email-input" name="data"  class="form-control"></div>
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="email-input" class=" form-control-label">ID de produtos</label></div>

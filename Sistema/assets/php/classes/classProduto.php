@@ -52,6 +52,33 @@ class classProduto{
 		}
 	}
 
+			public function delete(){
+		try{
+			$stmt = $this->conn->prepare("DELETE FROM `produtos` WHERE `id` = :id");
+			$stmt->bindParam(":id", $this->id);
+			$stmt->execute();
+			return 1;
+		}catch(PDOException $e){
+			echo $e->getMessage();
+			return 0;
+		}
+	}
+
+		public function edit(){
+		try{
+			$stmt = $this->conn->prepare("UPDATE `produtos` SET `nome` = :nome, `descricao` = :descricao, `quantidade` = :quantidade, `preco` = :preco WHERE `id` = :id");
+			$stmt->bindParam(":nome", $this->nome);
+			$stmt->bindParam(":descricao", $this->descricao);
+			$stmt->bindParam(":quantidade", $this->quantidade);
+			$stmt->bindParam(":preco", $this->preco);
+			$stmt->execute();
+			return 1;
+		}catch(PDOException $e){
+			echo $e->getMessage();
+			return 0;
+		}
+	}
+
 		public function index(){
 		$stmt = $this->conn->prepare("SELECT * FROM `produtos` WHERE 1 ORDER BY `nome`");
 		$stmt->execute();

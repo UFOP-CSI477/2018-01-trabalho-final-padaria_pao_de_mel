@@ -34,7 +34,7 @@ include_once 'assets/php/classes/classProduto.php';
                               </div>
         </div>
         <div class="col-sm-3">
-            <a href="add.html" class="btn btn-primary pull-right h2">Novo Item</a>
+            <a href="adicionarproduto.php" class="btn btn-primary pull-right h2">Novo Item</a>
         </div>
     </div> <!-- /#top -->
  

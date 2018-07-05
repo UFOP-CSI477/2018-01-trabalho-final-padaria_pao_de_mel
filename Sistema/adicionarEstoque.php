@@ -18,7 +18,7 @@
 
 
     if($classEstoques->insert()==1){
-         echo "<script>location.href='estoques.php';</script>"; 
+         echo "<script>location.href='estoque.php';</script>"; 
     }else{
 
         $error="Erro ao inserir";

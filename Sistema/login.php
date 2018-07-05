@@ -81,11 +81,11 @@
                     <form action="login.php" method="post">
                         <div class="form-group">
                             <label>E-mail</label>
-                            <input type="email" class="form-control" name="email" placeholder="Email">
+                            <input type="email" class="form-control" name="email" placeholder="Digite seu e-mail">
                         </div>
                         <div class="form-group">
                             <label>Senha</label>
-                            <input type="password" class="form-control" name="senha" placeholder="senha">
+                            <input type="password" class="form-control" name="senha" placeholder="Digite sua senha">
                         </div>
                         <div class="checkbox">
                             <label>

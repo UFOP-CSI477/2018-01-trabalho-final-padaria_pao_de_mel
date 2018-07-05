@@ -87,10 +87,11 @@ include_once 'assets/php/classes/classProduto.php';
         <table class="table table-striped" cellspacing="0" cellpadding="0">
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Nome</th>
                     <th>Descrição</th>
                     <th>Quantidade</th>
-                    <th>Preço</th>
+                    <th>Preço (R$)</th>
                     <th class="actions">Ações</th>
                 </tr>
             </thead>
@@ -100,6 +101,8 @@ include_once 'assets/php/classes/classProduto.php';
                  while($row = $stmt->fetch(PDO::FETCH_OBJ)){
                   ?>
                 <tr>
+                    <td class="nome"><?php echo $row->id ?></td>
+
                     <td class="nome"><?php echo $row->nome ?></td>
                     <td class="descricao"><?php echo $row->descricao ?></td>
                     <td class="quantidade"><?php echo $row->quantidade ?></td>

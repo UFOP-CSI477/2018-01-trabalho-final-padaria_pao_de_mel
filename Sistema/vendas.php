@@ -64,8 +64,8 @@ include_once 'assets/php/classes/classVendas.php';
                     <td><?php echo $row->produtos_id ?></td>
                     
                     <td class="actions">
-                        <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+                       <a class="btn btn-warning btn-xs" href="editarVendas.php?id=<?php echo $row->id ?>">Editar</a>
+                        <a class="btn btn-danger btn-xs"  href="excluirVendas.php?id=<?php echo $row->id ?>">Excluir</a>
                     </td>
                        <?php } ?>
                 </tr>

@@ -1,3 +1,42 @@
+<?php
+
+
+ /* TIPOS DE USUARIOS:
+  * ADMINISTRADOR - 1
+  * FUNCIONARIOS - 2
+  * PACIENTE - 3
+ */
+
+ require_once 'assets/php/classes/classLogin.php';
+
+ $classLogin = new classLogin();
+  session_start();
+
+ if(isset($_POST['login'])){
+
+  $user = $_POST['email'];
+  $senha = $_POST['senha'];
+
+  $email =(string) $classLogin->indexEmail($user)->email;
+  $senha =(string) $classLogin->indexEmail($user)->senha;
+  ECHO $email;
+  echo $senha;
+
+  if($user == "" || $senha == ""){
+    echo "<script>alert('Preencha todos os campos');</script>";
+  }else if($email == $user && $senha == $senha){
+    
+    $idu=     $tipo = $classLogin->indexEmail($user)->id;
+    $tipo = $classLogin->indexEmail($user)->type;
+    $_SESSION['type'] = $tipo;
+    $_SESSION['id']= $idu; 
+      header('location:  dashboard.php');
+
+  }else{
+    echo "<script>alert('Login ou senha incorretos');</script>";
+  }
+}
+?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -39,14 +78,14 @@
                     </a>
                 </div>
                 <div class="login-form">
-                    <form>
+                    <form action="login.php" method="post">
                         <div class="form-group">
                             <label>E-mail</label>
-                            <input type="email" class="form-control" placeholder="Email">
+                            <input type="email" class="form-control" name="email" placeholder="Email">
                         </div>
                         <div class="form-group">
                             <label>Senha</label>
-                            <input type="password" class="form-control" placeholder="Password">
+                            <input type="password" class="form-control" name="senha" placeholder="senha">
                         </div>
                         <div class="checkbox">
                             <label>
@@ -54,7 +93,7 @@
                             </label>
 
                         </div>
-                        <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Entrar</button>
+                        <button type="submit" name="login" class="btn btn-success btn-flat m-b-30 m-t-30">Entrar</button>
                     </form>
                 </div>
             </div>

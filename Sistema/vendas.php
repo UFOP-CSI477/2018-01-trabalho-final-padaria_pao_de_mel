@@ -19,6 +19,20 @@ include_once 'assets/php/classes/classVendas.php';
 
     }
 
+        if(isset($_POST['edit'])){
+        $classVendas->setId($_POST['id1']);
+        $classVendas->setQuantidade($_POST['quantidade']);
+        $classVendas->setData($_POST['data']);
+        $classVendas->setProdutos_id($_POST['produtos_id']);
+
+    if($classVendas->edit() == 1){
+        $result = "Estoque editado com sucesso!";
+    }else{
+        $error = "Erro ao editar";
+    }
+
+}
+
  ?>
 
 

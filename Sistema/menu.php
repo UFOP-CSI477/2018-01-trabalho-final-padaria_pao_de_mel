@@ -101,7 +101,7 @@
 
                         <div class="user-menu dropdown-menu">
 
-                                <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Sair</a>
+                                <a class="nav-link" href="logout.php"><i class="fa fa-power -off"></i>Sair</a>
                         </div>
                     </div>
 

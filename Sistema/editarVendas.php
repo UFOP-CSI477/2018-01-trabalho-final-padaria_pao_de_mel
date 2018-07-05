@@ -1,21 +1,11 @@
 <?php
 	include_once 'menu.php';
     include_once 'assets/php/classes/classVendas.php';
-    include_once 'assets/php/classes/classProduto.php';
-    $vendas= new classVendas();
-     $produto = new classProduto();
-    if(isset($_POST['edit'])){
-    $vendas->setId($_POST['id']);
-    $vendas->setQuantidade($_POST['quantidade']);
-    $vendas->setData($_POST['data']);
-    $vendas->setProdutos_id($_POST['produtos_id']);
-    if($vendas->edit() == 1){
-        $result = "Vendas editada com sucesso!";
-    }else{
-        $error = "Erro ao editar";
-    }
-}
+    $classVendas= new classVendas();
+     $vendas = new classvendas();
 
+         $classVendas->setId($_GET['id']);
+    $vendas = $classVendas->view();
 
         ?>
 
@@ -47,12 +37,12 @@
                                         
                                     </div>
                                     <div class="row form-group">
-                                        <div class="col col-md-3"><label for="email-input" class=" form-control-label">ID de Produtos</label></div>
+                                        <div class="col col-md-3"><label for="email-input" class=" form-control-label">ID do Produto</label></div>
                                         <div class="col-12 col-md-9"><input type="text" id="email-input" name="produtos_id" value="<?php echo $vendas->produtos_id ?>" class="form-control"></div>
                                     </div>
                                     
                                         <div class="form-actions form-group">
-                                         <input type="hidden" name="id1" value="<?php echo $vendas->id ?>" >
+                                         <input type="hidden" name="id1" value="" >
                                         	<button type="submit" name="edit" class="btn btn-success btn-sm">Salvar</button>
                                         </div>
                                 </form>

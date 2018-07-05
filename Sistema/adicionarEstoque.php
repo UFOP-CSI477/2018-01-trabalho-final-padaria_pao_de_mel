@@ -53,7 +53,7 @@
                                 </div>
                                
                                     <div class="row form-group">
-                                        <div class="col col-md-3"><label for="email-input" class=" form-control-label">ID de produtos</label></div>
+                                        <div class="col col-md-3"><label for="email-input" class=" form-control-label">ID do produto</label></div>
                                         <div class="col-12 col-md-9"><input type="text" id="email-input" name="produtos_id" placeholder="" class="form-control"></div>
                                     </div>
                                     

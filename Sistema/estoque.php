@@ -1,7 +1,54 @@
  <?php
  include_once 'menu.php';
+ include_once 'assets/php/classes/classEstoques.php';
 
+$classEstoques= new classEstoques();
+
+
+
+
+
+    if(isset($_POST['delete'])){
+
+         $classEstoques->setId($_POST['id1']);
+
+        if($classEstoques->delete() == 1){
+            $result = "Estoque excluido com sucesso!";
+        }else{
+            $error = "Erro ao excluir";
+        }
+
+    }
+
+    if(isset($_POST['edit'])){
+        $classEstoques->setId($_POST['id1']);
+         $classEstoques->setQuantidade($_POST['quantidade']);
+                  $classEstoques->setProdutos_Id($_POST['produtos_id']);
+
+
+
+
+    if($classEstoques->edit() == 1){
+        $result = "Procedimento editado com sucesso!";
+    }else{
+        $error = "Erro ao editar";
+    }
+
+}
+
+
+        if(isset($_GET['serch1'])){
+             $stmt = $classEstoques->pesquisa($_GET['serch1']);
+        }else{
+            $stmt = $classEstoques->index();
+           
+        }
+        
+        
+  
  ?>
+
+
 
  <div id="main" class="container-fluid" style="margin-top: 50px">
  
@@ -28,6 +75,10 @@
                                   </button>
                               </div>
 
+
+        </div>
+                <div class="col-sm-3">
+            <a href="adicionarestoque.php" class="btn btn-primary pull-right h2">Novo Item</a>
         </div>
     </div> <!-- /#top -->
  
@@ -36,32 +87,32 @@
     <div id="list" class="row">
     
     <div class="table-responsive col-md-12">
-        <table class="table table-striped" cellspacing="0" cellpadding="0">
+                <table class="table table-striped" cellspacing="0" cellpadding="0">
             <thead>
                 <tr>
-                    <th>Nome</th>
-                    <th>Quantidade</th>
+                    <th>Quantidade</th>                    
+                    <th>ID do Produto</th>
+                    
                     <th class="actions">Ações</th>
                 </tr>
             </thead>
             <tbody>
+                <?php 
+                $stmt = $classEstoques->index();
+                 while($row = $stmt->fetch(PDO::FETCH_OBJ)){
+                  ?>
                 <tr>
-                    <td>1001</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
+                    <td><?php echo $row->quantidade ?></td>
+                    
+                    <td><?php echo $row->produtos_id ?></td>
+                    
                     <td class="actions">
-                        <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
+                        <a class="btn btn-warning btn-xs" href="editarestoque.php?id=<?php echo $row->id ?>">Editar</a>
+                        <a class="btn btn-danger btn-xs"  href="excluirestoque.php?id=<?php echo $row->id ?>">Excluir</a>
                     </td>
+                       <?php } ?>
                 </tr>
-                <tr>
-                    <td>1002</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
-                    <td class="actions">
-                        <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-                    </td>
-                </tr>
-               
+                
             </tbody>
         </table>
     </div>

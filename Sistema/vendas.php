@@ -97,7 +97,7 @@ include_once 'assets/php/classes/classVendas.php';
 </div>
 
 <script type="application/javascript">
-                var active = document.getElementById("produtos");
+                var active = document.getElementById("vendas");
                 active.classList.add("active");
  </script>
 

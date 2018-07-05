@@ -2,11 +2,10 @@
 
 require_once "database.php";
 
-class classProcedures{
+class classEstoques{
 	private $id;
-	private $name;
-	private $price;
-	private $user_id;
+	private $quantidade;
+	private $produtos_id;
 
 
 	public function __construct() {
@@ -18,35 +17,20 @@ class classProcedures{
 	function setId($value){
 		$this->id = $value;
 	}
-	function setName($value){
-		$this->name = $value;
+	function setQuantidade($value){
+		$this->quantidade = $value;
 	}
 
-	function setPrice($value){
-		$this->price = $value;
+	function setProdutos_id($value){
+		$this->produtos_id = $value;
 	}
 
-	function setUser_id($value){
-		$this->user_id = $value;
-	}
-
-	function setRemember_token($value){
-		$this->remember_token = $value;
-	}
-	function setCreated_at($value){
-		$this->created_at = $value;
-	}
-
-	function setUpdate_at($value){
-		$this->update_at = $value;
-	}
 
 	public function insert(){
 		try{
-			$stmt = $this->conn->prepare("INSERT INTO `procedures` (`name`, `price`, `user_id`)VALUES (:name, :price, :user_id)");
-			$stmt->bindParam(":name", $this->name);
-			$stmt->bindParam(":price", $this->price);
-			$stmt->bindParam(":user_id", $this->user_id);
+			$stmt = $this->conn->prepare("INSERT INTO `estoque` (`quantidade`, `produtos_id`)VALUES (:quantidade, :produtos_id)");
+			$stmt->bindParam(":quantidade", $this->quantidade);
+			$stmt->bindParam(":produtos_id", $this->produtos_id);
 			$stmt->execute();
 			return 1;
 		}catch(PDOException $e){
@@ -57,7 +41,7 @@ class classProcedures{
 
 		public function delete(){
 		try{
-			$stmt = $this->conn->prepare("DELETE FROM `procedures` WHERE `id` = :id");
+			$stmt = $this->conn->prepare("DELETE FROM `estoque` WHERE `id` = :id");
 			$stmt->bindParam(":id", $this->id);
 			$stmt->execute();
 			return 1;
@@ -69,10 +53,10 @@ class classProcedures{
 
 		public function edit(){
 		try{
-			$stmt = $this->conn->prepare("UPDATE `procedures` SET `name` = :name, `price` = :price WHERE `id` = :id");
+			$stmt = $this->conn->prepare("UPDATE `estoque` SET `quantidade` = :quantidade, `produtos_id` = :produtos_id WHERE `id` = :id");
 			$stmt->bindParam(":id", $this->id);
-			$stmt->bindParam(":name", $this->name);
-			$stmt->bindParam(":price", $this->price);
+			$stmt->bindParam(":quantidade", $this->quantidade);
+			$stmt->bindParam(":produtos_id", $this->produtos_id);
 			$stmt->execute();
 			return 1;
 		}catch(PDOException $e){
@@ -82,7 +66,7 @@ class classProcedures{
 	}
 
 	public function view(){
-		$stmt = $this->conn->prepare("SELECT * FROM `procedures` WHERE `id` = :id");
+		$stmt = $this->conn->prepare("SELECT * FROM `estoque` WHERE `id` = :id");
 		$stmt->bindParam(":id", $this->id);
 		$stmt->execute();
 		$row = $stmt->fetch(PDO::FETCH_OBJ);
@@ -90,7 +74,7 @@ class classProcedures{
 	}
 
 		public function index(){
-		$stmt = $this->conn->prepare("SELECT * FROM `procedures` WHERE 1 ORDER BY `name`");
+		$stmt = $this->conn->prepare("SELECT * FROM `estoque` WHERE 1 ORDER BY `id`");
 		$stmt->execute();
 		return $stmt;
 	}

@@ -1,7 +1,12 @@
  <?php
  include_once 'menu.php';
+include_once 'assets/php/classes/classProduto.php';
+    
+        $classProduto= new classProduto();
+
 
  ?>
+
 
  <div id="main" class="container-fluid" style="margin-top: 50px">
  
@@ -49,106 +54,22 @@
                 </tr>
             </thead>
             <tbody>
+                <?php 
+                $stmt = $classProduto->index();
+                 while($row = $stmt->fetch(PDO::FETCH_OBJ)){
+                  ?>
                 <tr>
-                    <td>1001</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
-                    <td>Jes</td>
-                    <td>01/01/2015</td>
+                    <td><?php echo $row->nome ?></td>
+                    <td><?php echo $row->descricao ?></td>
+                    <td><?php echo $row->quantidade ?></td>
+                    <td><?php echo $row->preco ?></td>
                     <td class="actions">
                         <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
                         <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
                     </td>
+                       <?php } ?>
                 </tr>
-                <tr>
-                    <td>1002</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
-                    <td>Jes</td>
-                    <td>01/01/2015</td>
-                    <td class="actions">
-                        <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1003</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
-                    <td>Jes</td>
-                    <td>01/01/2015</td>
-                    <td class="actions">
-                        <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1004</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
-                    <td>Jes</td>
-                    <td>01/01/2015</td>
-                    <td class="actions">
-                        <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1005</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
-                    <td>Jes</td>
-                    <td>01/01/2015</td>
-                    <td class="actions">
-                        <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1006</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
-                    <td>Jes</td>
-                    <td>01/01/2015</td>
-                    <td class="actions">
-                        <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1007</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
-                    <td>Jes</td>
-                    <td>01/01/2015</td>
-                    <td class="actions">
-                        <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1008</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
-                    <td>Jes</td>
-                    <td>01/01/2015</td>
-                    <td class="actions">
-                        <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1009</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
-                    <td>Jes</td>
-                    <td>01/01/2015</td>
-                    <td class="actions">
-                        <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1010</td>
-                    <td>Lorem ipsum dolor sit amet, consectetur adipiscing</td>
-                    <td>Jes</td>
-                    <td>01/01/2015</td>
-                    <td class="actions">
-                        <a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
-                        <a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
-                    </td>
-                </tr>
+                
             </tbody>
         </table>
     </div>
